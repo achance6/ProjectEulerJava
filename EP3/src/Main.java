@@ -1,13 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Problem: What is the largest prime factor of the number 600851475143?
+ */
 public class Main {
 
 	public static void main(String[] args) {
 		final int PRIME_GEN_LIMIT = 100_000;
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("Input number to compute prime factorization: ");
-		long result = scnr.nextLong();
+		long init = 0, result = scnr.nextLong();
+		init = result;
 		ArrayList<Integer> factors = new ArrayList<>();
 		ArrayList<Integer> primeNumbers = generatePrimes(PRIME_GEN_LIMIT);
 		while (result != 1) {
@@ -23,6 +27,9 @@ public class Main {
 			if (tmp == result) break;
 		}
 		System.out.println(factors);
+		factors.sort(null);
+		System.out.println(factors.get(factors.size() - 1) + " is the largest prime factor of "
+				+ init);
 		scnr.close();
 	}
 	
