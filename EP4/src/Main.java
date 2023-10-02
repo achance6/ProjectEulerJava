@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Problem: Find the largest palindrome made from the product of two 3-digit numbers.
@@ -7,10 +6,18 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner scnr = new Scanner(System.in);
-		int num = scnr.nextInt();
-		System.out.println(isPalindrome(num));
-		
+		int largest = -1, factor1 = -1, factor2 = -1;
+		for (int i = 100; i < 1000; ++i) {
+			for (int j = 100; j < 1000; ++j) {
+				if (isPalindrome(i * j) && (i * j) > largest) {
+					largest = i * j;
+					factor1 = i;
+					factor2 = j;
+				}
+			}
+		}
+		System.out.println(factor1 + " * " + factor2 + " = " + largest);
+		System.out.println("This is the largest palindrome formed from the product of two 3-digit numbers");
 	}
 	
 	public static boolean isPalindrome(int num) {
