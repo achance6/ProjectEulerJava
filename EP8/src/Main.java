@@ -47,24 +47,18 @@ public class Main {
 				"84580156166097919133875499200524063689912560717606" +
 				"05886116467109405077541002256983155200055935729725" +
 				"71636269561882670428252483600823257530420752963450";
-		int biggest = 1, product = 1;
+		long biggest = 1;
 		for (int i = 0; i <= 1000 - SERIES_LENGTH; ++i) {
-			product = 1;
+			long product = 1;
 			String cur = BIG_NUM.substring(i, i + SERIES_LENGTH);
-			//System.out.println(cur);
-			for (int j = 0; j < SERIES_LENGTH; ++j) {
-				product *= Integer.parseInt(cur.substring(j, j + 1));
+			for (char c : cur.toCharArray()) {
+				product *= Integer.parseInt(((Character) c).toString());
 			}
 			if (product > biggest) {
 				biggest = product;
-				System.out.println(cur);
-				System.out.println(biggest);
 			}
-			//System.out.println(biggest);
-
 		}
-		System.out.println(biggest);
-
+		System.out.println("Largest product formed from " + SERIES_LENGTH + 
+				" adjacent digits is: " + biggest);
 	}
-
 }
