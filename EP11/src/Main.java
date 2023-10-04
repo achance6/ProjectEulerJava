@@ -47,12 +47,21 @@ public class Main {
 				+ "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54\r\n"
 				+ "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 		String[] lines = grid.split("\r\n");
+		String[][] nums = new String[20][20];
+		for (int i = 0; i < 20; ++i) {
+			nums[i] = lines[i].split(" ");
+		}
 		int[][] intGrid = new int[20][20];
-		System.out.println(lines[19]);
+		for (int i = 0; i < 20; ++i) {
+			for (int j = 0; j < 20; ++j) {
+				intGrid[i][j] = Integer.parseInt(nums[i][j]);
+			}
+		}
+		
 		int cur = 0;
 		for (int i = 0; i < 20; ++i) {
 			for (int j = 0; j < 20; ++j) {
-				
+				System.out.println(intGrid[i][j]);
 			}
 		}
 
