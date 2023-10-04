@@ -46,7 +46,15 @@ public class Main {
 				+ "20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16\r\n"
 				+ "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54\r\n"
 				+ "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
-		
+		String[] lines = grid.split("\r\n");
+		int[][] intGrid = new int[20][20];
+		System.out.println(lines[19]);
+		int cur = 0;
+		for (int i = 0; i < 20; ++i) {
+			for (int j = 0; j < 20; ++j) {
+				
+			}
+		}
 
 	}
 
