@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * Problem: What is the greatest product of four adjacent numbers 
  * in the same direction (up, down, left, right, or diagonally) in the 20 x 20 grid?
@@ -23,6 +26,8 @@
  * 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
  */
 public class Main {
+	static final int numAdj = 4;
+	static final int gridLen = 20;
 
 	public static void main(String[] args) {
 		final String grid = 
@@ -51,6 +56,7 @@ public class Main {
 		for (int i = 0; i < 20; ++i) {
 			nums[i] = lines[i].split(" ");
 		}
+		
 		int[][] intGrid = new int[20][20];
 		for (int i = 0; i < 20; ++i) {
 			for (int j = 0; j < 20; ++j) {
@@ -58,13 +64,110 @@ public class Main {
 			}
 		}
 		
+		ArrayList<Integer> products = new ArrayList<>();
 		int cur = 0;
 		for (int i = 0; i < 20; ++i) {
 			for (int j = 0; j < 20; ++j) {
-				System.out.println(intGrid[i][j]);
+				products.add(checkUp(intGrid, i, j));
+				products.add(checkUpRight(intGrid, i, j));
+				products.add(checkRight(intGrid, i, j));
+				products.add(checkDownRight(intGrid, i, j));
+				products.add(checkDown(intGrid, i, j));
+				products.add(checkDownLeft(intGrid, i, j));
+				products.add(checkLeft(intGrid, i, j));
+				products.add(checkUpLeft(intGrid, i, j));
+//				if (i < numAdj) {
+//					if (j < numAdj) {
+//						
+//					}
+//					if (j >= gridLen - numAdj) {
+//						
+//					}
+//				}
+//				if (i >= gridLen - numAdj) {
+//					
+//				}
 			}
 		}
-
+		products.sort((a, b) -> b - a);
+		System.out.println(grid);
+		System.out.println(products.get(0) + " is the largest product formed from " + 
+		numAdj + " adjacent numbers in this grid.");
 	}
+	
+	public static int checkUp(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int j = y; j > y - numAdj; --j) {
+				product *= grid[x][j];
+			}
+		}
+		catch(IndexOutOfBoundsException e) {return -1;}
+		return product;
+	}
+	public static int checkUpRight(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int i = x, j = y; i < x + numAdj && j > y - numAdj; ++i, --j) {
+				product *= grid[i][j];
+			}
+		} catch(Exception e) {return -1;}
+		return product;
+	}
+	public static int checkRight(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int i = x; i < x + numAdj; ++i) {
+				product *= grid[i][y];
+			}
+		} catch(Exception e) {return -1;}
+		return product;
+	}
+	public static int checkDownRight(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int i = x, j = y; i < x + numAdj && j < y + numAdj; ++i, ++j) {
+				product *= grid[i][j];
+			}
+		} catch(Exception e) {return -1;}
+		return product;
+	}
+	public static int checkDown(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int j = y; j < y + numAdj; ++j) {
+				product *= grid[x][j];
+			}
+		} catch(Exception e) {return -1;}
+		return product;
+	}
+	public static int checkDownLeft(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int i = x, j = y; i > x - numAdj && j < y + numAdj; --i, ++j) {
+				product *= grid[i][j];
+			}
+		} catch(Exception e) {return -1;}
+		return product;
+	}
+	public static int checkLeft(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int i = x; i > x - numAdj; --i) {
+				product *= grid[i][y];
+			}
+		} catch(Exception e) {return -1;}
+		return product;
+	}
+	public static int checkUpLeft(int[][] grid, int x, int y) {
+		int product = 1;
+		try {
+			for (int i = x, j = y; i > x - numAdj && j > y - numAdj; --i, --j) {
+				product *= grid[i][j];
+			}
+		} catch(Exception e) {return -1;}
+		return product;
+	}
+	
 
 }
