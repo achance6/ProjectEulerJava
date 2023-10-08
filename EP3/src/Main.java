@@ -39,7 +39,7 @@ public class Main {
 	}
 	
 	// Sieve of Eratosthenes
-	static ArrayList<Integer> generatePrimes(int n) {
+	private static ArrayList<Integer> generatePrimes(int n) {
 		Boolean[] ints = new Boolean[n];
 		int p = 2; //smallest prime number
 		ints[0] = true; ints[1] = true;
