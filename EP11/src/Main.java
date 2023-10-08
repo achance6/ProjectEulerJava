@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Problem: What is the greatest product of four adjacent numbers 
@@ -56,6 +55,7 @@ public class Main {
 		for (int i = 0; i < 20; ++i) {
 			nums[i] = lines[i].split(" ");
 		}
+		// Each number from grid extracted as string in nums
 		
 		int[][] intGrid = new int[20][20];
 		for (int i = 0; i < 20; ++i) {
@@ -63,9 +63,14 @@ public class Main {
 				intGrid[i][j] = Integer.parseInt(nums[i][j]);
 			}
 		}
-		
+		// Grid now represented as 20x20 array in intGrid
 		ArrayList<Integer> products = new ArrayList<>();
-		int cur = 0;
+		/**
+		 * No validation is done to make sure indices stay within bounds.
+		 * When they go out of bounds, it is simply caught and the functions
+		 * return -1 so as to not interfere with the real products
+		 * in the products array.
+		 */
 		for (int i = 0; i < 20; ++i) {
 			for (int j = 0; j < 20; ++j) {
 				products.add(checkUp(intGrid, i, j));
@@ -76,20 +81,9 @@ public class Main {
 				products.add(checkDownLeft(intGrid, i, j));
 				products.add(checkLeft(intGrid, i, j));
 				products.add(checkUpLeft(intGrid, i, j));
-//				if (i < numAdj) {
-//					if (j < numAdj) {
-//						
-//					}
-//					if (j >= gridLen - numAdj) {
-//						
-//					}
-//				}
-//				if (i >= gridLen - numAdj) {
-//					
-//				}
 			}
 		}
-		products.sort((a, b) -> b - a);
+		products.sort((a, b) -> b - a); // reverse natural order sort
 		System.out.println(grid);
 		System.out.println(products.get(0) + " is the largest product formed from " + 
 		numAdj + " adjacent numbers in this grid.");
@@ -111,7 +105,7 @@ public class Main {
 			for (int i = x, j = y; i < x + numAdj && j > y - numAdj; ++i, --j) {
 				product *= grid[i][j];
 			}
-		} catch(Exception e) {return -1;}
+		} catch(IndexOutOfBoundsException e) {return -1;}
 		return product;
 	}
 	public static int checkRight(int[][] grid, int x, int y) {
@@ -120,7 +114,7 @@ public class Main {
 			for (int i = x; i < x + numAdj; ++i) {
 				product *= grid[i][y];
 			}
-		} catch(Exception e) {return -1;}
+		} catch(IndexOutOfBoundsException e) {return -1;}
 		return product;
 	}
 	public static int checkDownRight(int[][] grid, int x, int y) {
@@ -129,7 +123,7 @@ public class Main {
 			for (int i = x, j = y; i < x + numAdj && j < y + numAdj; ++i, ++j) {
 				product *= grid[i][j];
 			}
-		} catch(Exception e) {return -1;}
+		} catch(IndexOutOfBoundsException e) {return -1;}
 		return product;
 	}
 	public static int checkDown(int[][] grid, int x, int y) {
@@ -138,7 +132,7 @@ public class Main {
 			for (int j = y; j < y + numAdj; ++j) {
 				product *= grid[x][j];
 			}
-		} catch(Exception e) {return -1;}
+		} catch(IndexOutOfBoundsException e) {return -1;}
 		return product;
 	}
 	public static int checkDownLeft(int[][] grid, int x, int y) {
@@ -147,7 +141,7 @@ public class Main {
 			for (int i = x, j = y; i > x - numAdj && j < y + numAdj; --i, ++j) {
 				product *= grid[i][j];
 			}
-		} catch(Exception e) {return -1;}
+		} catch(IndexOutOfBoundsException e) {return -1;}
 		return product;
 	}
 	public static int checkLeft(int[][] grid, int x, int y) {
@@ -156,7 +150,7 @@ public class Main {
 			for (int i = x; i > x - numAdj; --i) {
 				product *= grid[i][y];
 			}
-		} catch(Exception e) {return -1;}
+		} catch(IndexOutOfBoundsException e) {return -1;}
 		return product;
 	}
 	public static int checkUpLeft(int[][] grid, int x, int y) {
@@ -165,7 +159,7 @@ public class Main {
 			for (int i = x, j = y; i > x - numAdj && j > y - numAdj; --i, --j) {
 				product *= grid[i][j];
 			}
-		} catch(Exception e) {return -1;}
+		} catch(IndexOutOfBoundsException e) {return -1;}
 		return product;
 	}
 	
