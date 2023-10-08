@@ -12,25 +12,30 @@ public class Main {
 		System.out.println("Input number to compute prime factorization: ");
 		long init = 0, result = scnr.nextLong();
 		init = result;
-		ArrayList<Integer> factors = new ArrayList<>();
 		ArrayList<Integer> primeNumbers = generatePrimes(PRIME_GEN_LIMIT);
+		ArrayList<Integer> factors = genPrimeFactors(result, primeNumbers);
+		System.out.println(factors);
+		factors.sort(null);
+		System.out.println(factors.get(factors.size() - 1) + " is the largest prime factor of "
+				+ init);
+		scnr.close();
+	}
+
+	private static ArrayList<Integer> genPrimeFactors(long num, ArrayList<Integer> primeNumbers) {
+		ArrayList<Integer> factors = new ArrayList<>();
+		long result = num;
 		while (result != 1) {
 			long tmp = result;
 			for (int prime : primeNumbers) {
 				if (result % prime == 0) {
 					factors.add(prime);
 					result = result / prime;
-					// System.out.println(prime + " " + tmp);
 					break;
 				}
 			}
 			if (tmp == result) break;
 		}
-		System.out.println(factors);
-		factors.sort(null);
-		System.out.println(factors.get(factors.size() - 1) + " is the largest prime factor of "
-				+ init);
-		scnr.close();
+		return factors;
 	}
 	
 	// Sieve of Eratosthenes
