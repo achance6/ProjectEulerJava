@@ -18,7 +18,7 @@ public final class Main {
 		System.out.println((new EP15()).run());
 		System.out.println((new EP16()).run());
 		System.out.println((new EP17()).run());
-//		System.out.println((new EP18()).run());
+		System.out.println((new EP18()).run());
 //		System.out.println((new EP19()).run());
 //		System.out.println((new EP20()).run());
 //		System.out.println((new EP21()).run());
