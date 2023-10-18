@@ -31,6 +31,7 @@ public final class Methods {
 	
 	// Sieve of Eratosthenes
 	public static ArrayList<Integer> generatePrimes(int n) {
+		if (n < 2) return new ArrayList<Integer>();
 		Boolean[] ints = new Boolean[n];
 		int p = 2; //smallest prime number
 		ints[0] = true; ints[1] = true;
