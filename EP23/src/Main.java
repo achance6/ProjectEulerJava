@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * Problem: Find the sum of all the positive integers 
@@ -8,38 +9,31 @@ import java.util.ArrayList;
 public class Main {
 
 	private static final int LIM = 28123;
+	/**
+	 * Put abundant numbers in array, put sums of every pairs of numbers
+	 * in array into a set (as there will be duplicate sums that aren't needed)
+	 * then add all numbers that aren't in the set i.e. numbers that aren't the
+	 * sum of two abundant numbers.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		ArrayList<Integer> abundantNums = new ArrayList<>();
 		for (int i = 0; i <= LIM; ++i) {
 			if (isAbundant(i)) abundantNums.add(i);
 		}
+		HashSet<Integer> abundantSums = new HashSet<>();
+		for (int i : abundantNums) {
+			for (int j : abundantNums) {
+				abundantSums.add(i + j);
+			}
+		}
 		long sum = 0;
-		System.out.println(abundantNums);
-//		for (int i = 0; i <= LIM; ++i) {
-//			boolean isSum = false;
-//			for (int j : abundantNums) {
-//				for (int k : abundantNums) {
-//					if (i == j + k) {
-//						isSum = true;
-//						break;
-//					}
-//				}
-//			}
-//			if (! isSum) {
-//				sum += i;
-//				System.out.println(i);
-//			}
-//		}
+		for (int i = 0; i <= LIM; ++i) {
+			if (!abundantSums.contains(i)) sum += i;
+		}
+		
 		System.out.println(sum);
 		
-	}
-	
-	private static ArrayList<Long> genProperDivisors(long num) {
-		ArrayList<Long> factors = new ArrayList<>();
-		for (long i = 1; i < num; ++i) {
-			if (num % i == 0) factors.add(i);
-		}
-		return factors;
 	}
 	
 	private static long sumProperDivisors(long num) {
