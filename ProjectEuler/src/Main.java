@@ -14,7 +14,7 @@ public final class Main {
 		System.out.println((new EP11()).run());
 		//System.out.println((new EP12()).run()); // Takes really long
 		System.out.println((new EP13()).run());
-//		System.out.println((new EP14()).run());
+		System.out.println((new EP14()).run());
 //		System.out.println((new EP15()).run());
 //		System.out.println((new EP16()).run());
 //		System.out.println((new EP17()).run());
