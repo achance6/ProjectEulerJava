@@ -2,9 +2,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Problem:
@@ -20,10 +18,9 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		InputStream in = new FileInputStream("names.txt");
-		int next;
-		String cur = "";
 		String[] names;
 		byte[] bytes = in.readAllBytes(); 
+		in.close();
 		// pass byte array to string constructor, split string by comma delimiter
 		names = (new String(bytes, StandardCharsets.UTF_8)).split(","); 
 		
