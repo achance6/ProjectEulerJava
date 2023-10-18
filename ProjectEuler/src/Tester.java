@@ -1,5 +1,5 @@
 
-public final class Main {
+public final class Tester {
 	public static void main(String[] args) {
 		System.out.println((new EP1()).run());
 		System.out.println((new EP2()).run()); 
