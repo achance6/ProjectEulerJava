@@ -22,7 +22,7 @@ public final class Main {
 		System.out.println((new EP19()).run());
 		System.out.println((new EP20()).run());
 		System.out.println((new EP21()).run());
-//		System.out.println((new EP22()).run());
+		System.out.println((new EP22()).run());
 //		System.out.println((new EP23()).run());
 	}
 }

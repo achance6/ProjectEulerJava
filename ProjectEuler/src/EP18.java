@@ -56,7 +56,7 @@ public class EP18 implements EulerSolution {
 						curRow.get(j) + Math.max(rowBelow.get(j), rowBelow.get(j + 1)));
 			}
 		}
-		for(ArrayList<Integer> c : triInts) System.out.println(c);
+		//for(ArrayList<Integer> c : triInts) System.out.println(c);
 		return Integer.toString(triInts.get(0).get(0));
 	}
 
