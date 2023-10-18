@@ -55,12 +55,35 @@ public final class Methods {
 		return primes;
 	}
 	
-	public static ArrayList<Integer> genPrimeFactors(long num, ArrayList<Integer> primeNumbers) {
-		ArrayList<Integer> factors = new ArrayList<>();
+	public static ArrayList<Integer> genPrimeFactors(long num) {
+		ArrayList<Integer> primes;
+		if (num > Integer.MAX_VALUE) {
+			primes = generatePrimes(Integer.MAX_VALUE);
+		}
+		else primes = generatePrimes((int) num);
 		long result = num;
+		ArrayList<Integer> factors = new ArrayList<>();
 		while (result != 1) {
 			long tmp = result;
-			for (int prime : primeNumbers) {
+			for (int prime : primes) {
+				if (result % prime == 0) {
+					factors.add(prime);
+					result = result / prime;
+					break;
+				}
+			}
+			if (tmp == result) break;
+		}
+		return factors;
+	}
+	
+	public static ArrayList<Integer> genPrimeFactors(long num, int lim) {
+		ArrayList<Integer> primes = generatePrimes(lim);
+		long result = num;
+		ArrayList<Integer> factors = new ArrayList<>();
+		while (result != 1) {
+			long tmp = result;
+			for (int prime : primes) {
 				if (result % prime == 0) {
 					factors.add(prime);
 					result = result / prime;

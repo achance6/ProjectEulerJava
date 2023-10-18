@@ -3,7 +3,7 @@ public final class Main {
 	public static void main(String[] args) {
 		System.out.println((new EP1()).run());
 		System.out.println((new EP2()).run()); 
-//		System.out.println((new EP3()).run());
+		System.out.println((new EP3()).run());
 //		System.out.println((new EP4()).run());
 //		System.out.println((new EP5()).run());
 //		System.out.println((new EP6()).run());
