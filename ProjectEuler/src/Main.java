@@ -9,7 +9,7 @@ public final class Main {
 		System.out.println((new EP6()).run());
 		System.out.println((new EP7()).run());
 		System.out.println((new EP8()).run()); 
-//		System.out.println((new EP9()).run());
+		System.out.println((new EP9()).run());
 //		System.out.println((new EP10()).run());
 //		System.out.println((new EP11()).run());
 //		System.out.println((new EP12()).run());
