@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Problem: What is the largest prime factor of the number 600851475143?
  */
-public class EP3 implements EulerSolution {
+public class EP03 implements EulerSolution {
 	static final int PRIME_GEN_LIMIT = 100_000;
 	
 	@Override

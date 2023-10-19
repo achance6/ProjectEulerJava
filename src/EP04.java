@@ -1,7 +1,7 @@
 /**
  * Problem: Find the largest palindrome made from the product of two 3-digit numbers.
  */
-public class EP4 implements EulerSolution {
+public class EP04 implements EulerSolution {
 
 	@Override
 	public String run() {

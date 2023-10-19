@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Problem: What is the 10001st prime number?
  */
-public class EP7 implements EulerSolution {
+public class EP07 implements EulerSolution {
 
 	private static final int LIM = 10_001;
 	

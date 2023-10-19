@@ -22,7 +22,7 @@
  * Problem: Find the thirteen adjacent digits in the 1000-digit number 
  * that have the greatest product. What is the value of this product?
  */
-public class EP8 implements EulerSolution {
+public class EP08 implements EulerSolution {
 
 	private static final int SERIES_LENGTH = 13;
 	private static final String BIG_NUM = 

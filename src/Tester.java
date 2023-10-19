@@ -1,15 +1,15 @@
 
 public final class Tester {
 	public static void main(String[] args) {
-		System.out.println((new EP1()).run());
-		System.out.println((new EP2()).run()); 
-		System.out.println((new EP3()).run());
-		System.out.println((new EP4()).run());
-		System.out.println((new EP5()).run());
-		System.out.println((new EP6()).run());
-		System.out.println((new EP7()).run());
-		System.out.println((new EP8()).run()); 
-		System.out.println((new EP9()).run());
+		System.out.println((new EP01()).run());
+		System.out.println((new EP02()).run()); 
+		System.out.println((new EP03()).run());
+		System.out.println((new EP04()).run());
+		System.out.println((new EP05()).run());
+		System.out.println((new EP06()).run());
+		System.out.println((new EP07()).run());
+		System.out.println((new EP08()).run()); 
+		System.out.println((new EP09()).run());
 		System.out.println((new EP10()).run());
 		System.out.println((new EP11()).run());
 		//System.out.println((new EP12()).run()); // Takes really long

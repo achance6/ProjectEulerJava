@@ -2,7 +2,7 @@
  * Problem: There exists exactly one Pythagorean triplet for which a + b + c = 1000.
  * Find the product abc.
  */
-public class EP9 implements EulerSolution {
+public class EP09 implements EulerSolution {
 
 	private static final int LIMIT = 1000;
 	int product = -1;
