@@ -1,7 +1,6 @@
-
-public final class Tester {
+public final class Main {
 	public static void main(String[] args) {
-		System.out.println((new EP01()).run());
+		System.out.println((new EP01()).run()); 
 		System.out.println((new EP02()).run()); 
 		System.out.println((new EP03()).run());
 		System.out.println((new EP04()).run());
