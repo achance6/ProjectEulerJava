@@ -12,7 +12,7 @@ public class EP21 implements EulerSolution {
 				sum += i + j;
 			}
 		}
-		return Long.toString(sum);
+		return Long.toString(sum / 2);
 	}
 
 }
