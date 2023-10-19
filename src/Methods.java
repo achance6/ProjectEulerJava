@@ -99,9 +99,18 @@ public final class Methods {
 	public static ArrayList<Long> genTriangleNumbers(long n) {
 		ArrayList<Long> triNums = new ArrayList<>();
 		for (long i = 1; i <= n; ++i) {
-			triNums.add((i * (i + 1)) / 2); //Summation formula from 1 to N
+			triNums.add(Methods.genTriNum(i)); //Summation formula from 1 to N
 		}
 		return triNums;
+	}
+	
+	/**
+	 * Generates the Nth triangle number. Starts at 1.
+	 * @param n Nth triangle to generate
+	 * @return Nth triangle number
+	 */
+	public static Long genTriNum(long n) {
+		return (n * (n + 1)) / 2; //triangle number formula
 	}
 	
 	public static ArrayList<Long> genCollatzSequence(long n) {

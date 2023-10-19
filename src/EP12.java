@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Problem: What is the value of the first triangle number 
  * to have over five hundred divisors?
@@ -9,26 +7,23 @@ public class EP12 implements EulerSolution {
 	
 	@Override
 	public String run() {
-		ArrayList<Long> triNums;
-		int divisors = 0;
-		int j = 16384;
-		String ans = "";
+		long divisors = 0, cur = 1;
 		while (divisors <= DIVISOR_AMOUNT) {
-			//System.out.println("Trying " + j + " triangle numbers");
-			triNums = Methods.genTriangleNumbers(j);
-			for (long triNum : triNums) {
-				divisors = 0;
-				for (int i = 1; i <= triNum; ++i) {
-					if (triNum % i == 0) {
-						divisors++;
-					}
+			long triNum = Methods.genTriNum(cur);
+			/* Checking up to sqrt(num) will yield approx(?) half of its factors.
+			 * can then add 2 to the divisors for every factor under sqrt(num) found
+			 * Unsure if cases where this fails.
+			 */
+			for (int j = 1; j <= Math.sqrt(triNum); ++j) {
+				if (triNum % j == 0) {
+					divisors += 2;
 				}
-				//System.out.println(triNum + " has " + divisors + " divisors.");
-				if (divisors > DIVISOR_AMOUNT) ans = Long.toString(triNum);
+				if (divisors > DIVISOR_AMOUNT) return Long.toString(triNum); //shortcut
 			}
-			j = j * 2;
+			divisors = 0;
+			cur++;
 		}
-		return ans;
+		return "Error";
 	}
 
 }
