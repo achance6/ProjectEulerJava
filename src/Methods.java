@@ -195,4 +195,10 @@ public final class Methods {
 	public static boolean isAbundant(long num) {
 		return sumProperDivisors(num) > num;
 	}
+
+	public static String[] genPermutations(String[] elems) {
+		int k = elems.length;
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
