@@ -47,6 +47,7 @@ public final class Main {
 //		System.out.println((new EP21()).run());
 //		System.out.println((new EP22()).run());
 //		System.out.println((new EP23()).run());
-		System.out.println((new EP24()).run());
+//		System.out.println((new EP24()).run());
+		System.out.println((new EP25()).run());
 	}
 }
