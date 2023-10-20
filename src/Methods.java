@@ -23,6 +23,25 @@ public final class Methods {
 		return seq;
 	}
 	
+	/**
+	 * Generates Fibonacci numbers up to a max number
+	 * @param limit max number to potentially generate
+	 * @return ArrayList of string fibonacci numbers. Ascending order
+	 */
+	public static ArrayList<String> genFibSeq(String limit) {
+		ArrayList<String> seq = new ArrayList<>();
+		BigInteger last_1 = BigInteger.TWO;
+		BigInteger last_2 = BigInteger.ONE;
+		seq.add("1"); seq.add("1"); // first two terms;
+		do {
+			seq.add(last_1.toString());
+			BigInteger tmp = new BigInteger(last_1.toString());
+			last_1 = last_1.add(last_2);
+			last_2 = new BigInteger(tmp.toString());
+		} while (last_1.compareTo(new BigInteger(limit)) <= 0);
+		return seq;
+	}
+	
 	public static boolean isPalindrome(long num) {
 		String n = Long.toString(num);
 		ArrayList<Character> firstHalf = new ArrayList<>();
