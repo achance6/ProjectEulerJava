@@ -49,5 +49,7 @@ public final class SolutionTester {
 	public void testEP22() { assertEquals("871198282", (new EP22()).run()); }
 	@Test
 	public void testEP23() { assertEquals("4179871", (new EP23()).run()); }
+	@Test
+	public void testEP24() { assertEquals("2783915460", (new EP24()).run()); }
 	
 }

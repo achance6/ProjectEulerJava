@@ -22,7 +22,7 @@ public class EP24 implements EulerSolution {
 		Integer[] elems = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 		TreeSet<String> perms = new TreeSet<String>();
 		Methods.genPermutations(elems.length, elems, perms);
-		return perms.toArray()[999_999].toString();
+		return (perms.toArray()[999_999]).toString();
 	}
 
 	
