@@ -5,6 +5,11 @@ import java.util.Set;
 
 public final class Methods {
 	
+	/**
+	 * Generates Fibonacci numbers up to a max number
+	 * @param LIM max number to potentially generate
+	 * @return ArrayList of fibonacci numbers. Ascending order
+	 */
 	public static ArrayList<Long> genFibSeq(final long LIM) {
 		ArrayList<Long> seq = new ArrayList<>();
 		long last_1 = 2;
