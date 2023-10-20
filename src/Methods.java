@@ -14,6 +14,7 @@ public final class Methods {
 		ArrayList<Long> seq = new ArrayList<>();
 		long last_1 = 2;
 		long last_2 = 1;
+		seq.add((long) 1); seq.add((long) 1); // first two terms
 		do {
 			seq.add(last_1);
 			long tmp = last_1;
