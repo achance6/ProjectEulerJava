@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -196,9 +197,29 @@ public final class Methods {
 		return sumProperDivisors(num) > num;
 	}
 
-	public static String[] genPermutations(String[] elems) {
-		int k = elems.length;
-		// TODO Auto-generated method stub
-		return null;
+	public static <T> void genPermutations(int k, T[] elems, AbstractSet<String> perms) {
+		if (k == 1) {
+			String c = "";
+			for (T elem: elems) c += elem;
+			perms.add(c);
+		}
+		else {
+			genPermutations(k - 1, elems, perms);
+			
+			for (int i = 0; i < k - 1; ++i) {
+				if (k % 2 == 0) 
+					swap(elems, i, k - 1);
+				else 
+					swap(elems, 0, k - 1);
+				genPermutations(k - 1, elems, perms);
+			}
+			
+		}
+	}
+
+	private static <T> void swap(T[] arr, int i, int j) {
+		T tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
 	}
 }

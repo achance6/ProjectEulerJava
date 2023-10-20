@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.TreeSet;
 
 /**
  * A permutation is an ordered arrangement of objects. 
@@ -19,10 +19,10 @@ public class EP24 implements EulerSolution {
 	@Override
 	public String run() {
 		
-		String[] elems = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-		String[] allPerms = Methods.genPermutations(elems);
-		Arrays.sort(allPerms);
-		return allPerms[999_999];
+		Integer[] elems = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+		TreeSet<String> perms = new TreeSet<String>();
+		Methods.genPermutations(elems.length, elems, perms);
+		return perms.toArray()[999_999].toString();
 	}
 
 	
