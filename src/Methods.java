@@ -1,7 +1,7 @@
 import java.math.BigInteger;
-import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 
 public final class Methods {
 	
@@ -197,21 +197,29 @@ public final class Methods {
 		return sumProperDivisors(num) > num;
 	}
 
-	public static <T> void genPermutations(int k, T[] elems, AbstractSet<String> perms) {
+	/**
+	 * Generates all permutations of a given array of elements and stores them 
+	 * in a set. Utilizes recursive implementation of Heap's algorithm.
+	 * @param <T> type of elements in array
+	 * @param k length of array
+	 * @param elems elements to generate permutations from
+	 * @param perms set to store permutations in
+	 */
+	public static <T> void genPerms(int k, T[] elems, Set<String> perms) {
 		if (k == 1) {
 			String c = "";
 			for (T elem: elems) c += elem;
 			perms.add(c);
 		}
 		else {
-			genPermutations(k - 1, elems, perms);
+			genPerms(k - 1, elems, perms);
 			
 			for (int i = 0; i < k - 1; ++i) {
 				if (k % 2 == 0) 
 					swap(elems, i, k - 1);
 				else 
 					swap(elems, 0, k - 1);
-				genPermutations(k - 1, elems, perms);
+				genPerms(k - 1, elems, perms);
 			}
 			
 		}
