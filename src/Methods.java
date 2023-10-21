@@ -255,4 +255,9 @@ public final class Methods {
 		arr[i] = arr[j];
 		arr[j] = tmp;
 	}
+
+	public static int DigitsInRecurringCycle(String c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
