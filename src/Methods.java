@@ -1,6 +1,5 @@
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -223,7 +222,7 @@ public final class Methods {
 	
 	/**
 	 * Generates proper divisors of a number.
-	 * Proper divisors of a natural number are all divisors that
+	 * Proper divisors of a natural number are all positive divisors that
 	 * are less than the number.
 	 * @param num Number to calculate proper divisors of
 	 * @return ArrayList containing all proper divisors in ascending order.
@@ -248,6 +247,13 @@ public final class Methods {
 		return sum;
 	}
 	
+	/**
+	 * Sums the proper divisors of a number.
+	 * Proper divisors of a natural number are all positive divisors that
+	 * are less than the number.
+	 * @param num number to get sum of proper divisors from
+	 * @return sum of proper divisors
+	 */
 	public static long sumProperDivisors(long num) {
 		long sum = 0;
 		for (long i = 1; i < num; ++i) {
