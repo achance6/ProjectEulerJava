@@ -82,6 +82,12 @@ public final class Methods {
 		return primes;
 	}
 	
+	/**
+	 * Generate list of prime factors of a number.
+	 * Warning: Large number can be extremely computationally costly.
+	 * @param num Number to generate prime factors of
+	 * @return ArrayList containing Prime Factors
+	 */
 	public static ArrayList<Integer> genPrimeFactors(long num) {
 		ArrayList<Integer> primes;
 		if (num > Integer.MAX_VALUE) {
@@ -104,6 +110,14 @@ public final class Methods {
 		return factors;
 	}
 	
+	/**
+	 * Generate list of prime factors of a number. 
+	 * Limit parameter applied for performance purposes only as
+	 * generating primes up to a given number can become extremely costly.
+	 * @param num Number to calculate prime factors of
+	 * @param lim Highest prime number to generate
+	 * @return ArrayList of prime factors of a number
+	 */
 	public static ArrayList<Integer> genPrimeFactors(long num, int lim) {
 		ArrayList<Integer> primes = generatePrimes(lim);
 		long result = num;
