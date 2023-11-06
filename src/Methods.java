@@ -1,6 +1,7 @@
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 public final class Methods {
@@ -236,7 +237,12 @@ public final class Methods {
 		return factors;
 	}
 	
-	public static long sumAll(Collection<Long> nums) {
+	/**
+	 * Sums all longs within a List
+	 * @param nums collection of longs
+	 * @return sum of all longs in List
+	 */
+	public static long sumAll(List<Long> nums) {
 		long sum = 0;
 		for (long num : nums) sum += num;
 		return sum;
