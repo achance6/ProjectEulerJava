@@ -197,6 +197,11 @@ public final class Methods {
 		return result;
 	}
 	
+	/**
+	 * Returns factorial of a BigInteger. Can't overflow!
+	 * @param n number to compute factorial of
+	 * @return factorial of n
+	 */
 	public static BigInteger fact(BigInteger n) {
 		if (n.equals(BigInteger.ZERO)) return BigInteger.ONE;
 		BigInteger result = new BigInteger(n.toString());
