@@ -160,10 +160,22 @@ public final class Methods {
 		return seq;
 	}
 	
+	/**
+	 * Returns binomial coefficient of two longs
+	 * @param n
+	 * @param k
+	 * @return binomial coefficient
+	 */
 	public static long binCo(long n, long k) {
 		return fact(n) / (fact(k) * fact(n - k));
 	}
 	
+	/**
+	 * Returns binomial coefficient of two BigInteger objects
+	 * @param n
+	 * @param k
+	 * @return binomial coefficient
+	 */
 	public static BigInteger binCo(BigInteger n, BigInteger k) {
 		return fact(n).divide((fact(k).multiply(fact(n.subtract(k)))));
 	}
