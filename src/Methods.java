@@ -43,6 +43,13 @@ public final class Methods {
 		return seq;
 	}
 	
+	/**
+	 * Determines if the given number is a palindrome.
+	 * A palindrome number is a number which is the same
+	 * read forwards or backwards.
+	 * @param num Number to check
+	 * @return True if num is a palindrome
+	 */
 	public static boolean isPalindrome(long num) {
 		String n = Long.toString(num);
 		ArrayList<Character> firstHalf = new ArrayList<>();
