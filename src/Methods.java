@@ -123,14 +123,14 @@ public final class Methods {
 	}
 	
 	/**
-	 * Generates triangle numbers for a given number.
-	 * @param n
-	 * @return
+	 * Generates triangle numbers up to a given number
+	 * @param n highest triangle number to generate
+	 * @return ArrayList of triangle numbers up to n
 	 */
 	public static ArrayList<Long> genTriangleNumbers(long n) {
 		ArrayList<Long> triNums = new ArrayList<>();
 		for (long i = 1; i <= n; ++i) {
-			triNums.add(Methods.genTriNum(i)); //Summation formula from 1 to N
+			triNums.add(genTriNum(i)); //Summation formula from 1 to N
 		}
 		return triNums;
 	}
