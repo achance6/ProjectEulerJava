@@ -1,29 +1,5 @@
 public final class Main {
 	public static void main(String[] args) {
-//		SolutionTester tester = new SolutionTester();
-//		tester.testEP01();
-//		tester.testEP02();
-//		tester.testEP03();
-//		tester.testEP04();
-//		tester.testEP05();
-//		tester.testEP06();
-//		tester.testEP07();
-//		tester.testEP08();
-//		tester.testEP09();
-//		tester.testEP10();
-//		tester.testEP11();
-//		tester.testEP12();
-//		tester.testEP13();
-//		tester.testEP14();
-//		tester.testEP15();
-//		tester.testEP16();
-//		tester.testEP17();
-//		tester.testEP18();
-//		tester.testEP19();
-//		tester.testEP20();
-//		tester.testEP21();
-//		tester.testEP22();
-//		tester.testEP23();
 //		System.out.println((new EP01()).run());
 //		System.out.println((new EP02()).run()); 
 //		System.out.println((new EP03()).run());
@@ -48,6 +24,7 @@ public final class Main {
 //		System.out.println((new EP22()).run());
 //		System.out.println((new EP23()).run());
 //		System.out.println((new EP24()).run());
-		System.out.println((new EP25()).run());
+//		System.out.println((new EP25()).run());
+//		System.out.println((new EP26()).run());
 	}
 }
