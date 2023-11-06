@@ -220,8 +220,16 @@ public final class Methods {
 		return result;
 	}
 	
+	/**
+	 * Generates proper divisors of a number.
+	 * Proper divisors of a natural number are all divisors that
+	 * are less than the number.
+	 * @param num Number to calculate proper divisors of
+	 * @return ArrayList containing all proper divisors in ascending order.
+	 */
 	public static ArrayList<Long> genProperDivisors(long num) {
 		ArrayList<Long> factors = new ArrayList<>();
+		// TODO: Crude way, could be improved
 		for (long i = 1; i < num; ++i) {
 			if (num % i == 0) factors.add(i);
 		}
