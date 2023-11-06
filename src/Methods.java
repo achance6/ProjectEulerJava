@@ -262,11 +262,20 @@ public final class Methods {
 		return sum;
 	}
 	
+	/**
+	 * Calculates whether two numbers are "amicable"
+	 * Amicable numbers are numbers a and b 
+	 * where the sum of the proper divisors of a is equal to b
+	 * and the sum of the proper divisors of b is equal to a
+	 * @param a
+	 * @param b
+	 * @return True if a and b are amicable
+	 */
 	public static boolean isAmicableNumbers(long a, long b) {
-		if (a == b) return false;
-		if (sumProperDivisors(a) == b &&
-				sumProperDivisors(b) == a) return true;
-		return false;
+		if (a == b) return false; // Number can't be amicable with itself
+		if (sumProperDivisors(a) != b || 
+			sumProperDivisors(b) != a) return false;
+		return true;
 	}
 	
 	public static boolean isAbundant(long num) {
