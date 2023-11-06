@@ -180,15 +180,21 @@ public final class Methods {
 		return fact(n).divide((fact(k).multiply(fact(n.subtract(k)))));
 	}
 	
+	/**
+	 * Returns factorial of a long. 
+	 * Throws exception if computation results in overflow.
+	 * @param n number to compute factorial of
+	 * @return factorial of n
+	 */
 	public static long fact(long n) {
 		if (n == 0) return 1;
 		long result = n;
 		while (n > 1) {
 			n--;
-			result = result * n;
+			// Throws exception if results in overflow
+			result = Math.multiplyExact(result, n); 
 		}
-		if (result < 1) throw new IllegalArgumentException("Arithmetic overflow: Input too large");
-		else return result;
+		return result;
 	}
 	
 	public static BigInteger fact(BigInteger n) {
