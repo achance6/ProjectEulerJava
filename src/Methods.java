@@ -145,25 +145,29 @@ public final class Methods {
 	 * if even, divide by 2; if odd, triple it and add 1 until the result
 	 * is 1.
 	 * @param n Number to use to generate sequence
-	 * @return ArrayList containing Collatz sequence
+	 * @return ArrayList containing Collatz sequence. 
+	 * First element is always the given number.
 	 */
 	public static ArrayList<Long> genCollatzSequence(long n) {
+		if (n < 1) { 
+			throw new IllegalArgumentException
+			("Collatz Sequence doesn't work on non-positive numbers"); 
+		}
 		ArrayList<Long> seq = new ArrayList<>();
 		seq.add(n);
-		long res = n;
-		try {
-			while (res != 1) {
-				if (res % 2 == 0) {
-					res = res / 2;
-					seq.add(res);
-				}
-				else {
-					res = (3 * res) + 1;
-					seq.add(res);
-				}
+		long result = n;
+		
+		// Collatz Sequence
+		while (result != 1) {
+			if (result % 2 == 0) {
+				result = result / 2;
+				seq.add(result);
 			}
-		} catch (Exception e) {
-			return seq;
+			else {
+				// in case of overflow
+				result = Math.addExact(Math.multiplyExact(3, result), 1);
+				seq.add(result);
+			}
 		}
 		return seq;
 	}
