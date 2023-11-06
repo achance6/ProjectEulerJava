@@ -317,6 +317,13 @@ public final class Methods {
 		}
 	}
 
+	/**
+	 * Swaps two elements in an array
+	 * @param <T> Type of array
+	 * @param arr
+	 * @param i
+	 * @param j
+	 */
 	private static <T> void swap(T[] arr, int i, int j) {
 		T tmp = arr[i];
 		arr[i] = arr[j];
