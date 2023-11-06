@@ -187,6 +187,9 @@ public final class Methods {
 	 * @return factorial of n
 	 */
 	public static long fact(long n) {
+		if (n < 0) 
+			throw new IllegalArgumentException
+			("Illegal argument, can't compute factorial of a negative.");
 		if (n == 0) return 1;
 		long result = n;
 		while (n > 1) {
@@ -203,7 +206,12 @@ public final class Methods {
 	 * @return factorial of n
 	 */
 	public static BigInteger fact(BigInteger n) {
-		if (n.equals(BigInteger.ZERO)) return BigInteger.ONE;
+		if (n.compareTo(BigInteger.ZERO) < 0) 
+			throw new IllegalArgumentException
+			("Illegal argument, can't compute factorial of a negative.");
+		// 0! == 1
+		if (n.equals(BigInteger.ZERO)) { return BigInteger.ONE; }
+		
 		BigInteger result = new BigInteger(n.toString());
 		while (n.compareTo(BigInteger.ONE) > 0) {
 			n = n.subtract(BigInteger.ONE);
