@@ -278,6 +278,13 @@ public final class Methods {
 		return true;
 	}
 	
+	/**
+	 * Determines whether given number is "abundant."
+	 * A number is abundant if the sum of its proper divisors
+	 * are greater than the number itself. 
+	 * @param num Number to check if abundant
+	 * @return True if abundant
+	 */
 	public static boolean isAbundant(long num) {
 		return sumProperDivisors(num) > num;
 	}
