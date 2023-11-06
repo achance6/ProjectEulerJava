@@ -62,7 +62,12 @@ public final class Methods {
 		return false;
 	}
 	
-	// Sieve of Eratosthenes
+	/**
+	 * Generates list of prime numbers up to a given number.
+	 * Uses Sieve of Eratosthenes algorithm
+	 * @param n Highest prime to potentially generate
+	 * @return ArrayList of primes. Ascending order.
+	 */
 	public static ArrayList<Integer> generatePrimes(int n) {
 		if (n < 2) return new ArrayList<Integer>();
 		Boolean[] ints = new Boolean[n];
