@@ -25,7 +25,8 @@ public final class Methods {
 	}
 	
 	/**
-	 * Generates Fibonacci numbers up to a max number
+	 * Generates Fibonacci numbers up to a max number.
+	 * Allows for infinitely large numbers
 	 * @param limit max number to potentially generate
 	 * @return ArrayList of string fibonacci numbers. Ascending order
 	 */
