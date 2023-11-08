@@ -2,6 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public final class MethodTester {
+	final long LONG_VALUE = Integer.MAX_VALUE + 1;
 
 	@Test
 	public void test_generate_fib_seq() { 
@@ -26,9 +27,23 @@ public final class MethodTester {
 			Methods.genFibSeq("2247483648").toString());
 	}
 	
-//	@Test
-//	public void testPalindrome() {
-//		assertEquals("", Methods.isPalindrome(0))
-//	}
+	@Test
+	public void test_is_palindrome_zero() {
+		assertEquals(true, Methods.isPalindrome(0));
+	}
 	
+	@Test
+	public void test_is_palindrome_1001() {
+		assertEquals(true, Methods.isPalindrome(1001));
+	}
+	
+	@Test
+	public void test_is_palindrome_1002() {
+		assertEquals(false, Methods.isPalindrome(1002));
+	}
+	
+	@Test
+	public void test_is_palindrome_big() {
+		assertEquals(false, Methods.isPalindrome(LONG_VALUE));
+	}
 }
