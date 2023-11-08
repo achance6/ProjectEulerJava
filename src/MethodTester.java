@@ -46,4 +46,21 @@ public final class MethodTester {
 	public void test_is_palindrome_big() {
 		assertEquals(false, Methods.isPalindrome(LONG_VALUE));
 	}
+	
+	// TODO: generatePrimes tests
+	// TODO: genPrimeFactors tests
+	// TODO: genTriangleNum tests
+	// TODO: genTriNum tests
+	// TODO: genCollatzSequence tests
+	// TODO: binCo tests
+	// TODO: fact tests
+	// TODO: genProperDivisors tests
+	// TODO: sumAll tests
+	// TODO: sumProperDivisors tests
+	// TODO: isAmicableNumbers tests
+	// TODO: isAbundant tests
+	// TODO: genPerms tests
+	// TODO: swap tests
+	
+	
 }
