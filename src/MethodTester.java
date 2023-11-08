@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Test;
 public final class MethodTester {
 
 	@Test
-	public void testGenFibSeq() { 
+	public void test_generate_fib_seq() { 
 		assertEquals("[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]", 
 			Methods.genFibSeq(1_000).toString()); 
 		}
 	
 	@Test
-	public void testGenFibSeqString() { 
+	public void test_generate_fib_seq_string() { 
 		assertEquals("[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]", 
 			Methods.genFibSeq("1000").toString()); 
 		}
 	
 	@Test
-	public void testGenFibSeqStringBig() {
+	public void test_generate_fib_sequence_big_string() {
 		assertEquals("[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, "
 				+ "610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, "
 				+ "46368, 75025, 121393, 196418, 317811, 514229, 832040, "
@@ -25,4 +25,10 @@ public final class MethodTester {
 				+ "267914296, 433494437, 701408733, 1134903170, 1836311903]",
 			Methods.genFibSeq("2247483648").toString());
 	}
+	
+//	@Test
+//	public void testPalindrome() {
+//		assertEquals("", Methods.isPalindrome(0))
+//	}
+	
 }
