@@ -35,12 +35,14 @@ public final class Methods {
 		BigInteger last_1 = BigInteger.TWO;
 		BigInteger last_2 = BigInteger.ONE;
 		seq.add("1"); seq.add("1"); // first two terms;
+		
 		do {
 			seq.add(last_1.toString());
 			BigInteger tmp = new BigInteger(last_1.toString());
 			last_1 = last_1.add(last_2);
 			last_2 = new BigInteger(tmp.toString());
 		} while (last_1.compareTo(new BigInteger(limit)) <= 0);
+		
 		return seq;
 	}
 
@@ -59,8 +61,8 @@ public final class Methods {
 			firstHalf.add(n.charAt(i));
 			secondHalf.add(n.charAt(n.length() - 1 - i));
 		}
-		if (firstHalf.equals(secondHalf)) return true;
-		return false;
+		
+		return firstHalf.equals(secondHalf);
 	}
 
 	/**
@@ -102,12 +104,15 @@ public final class Methods {
 	 * @return ArrayList containing Prime Factors
 	 */
 	public static ArrayList<Integer> genPrimeFactors(long num) {
-		ArrayList<Integer> primes = num > Integer.MAX_VALUE ? 
+		ArrayList<Integer> primes = 
+				num > Integer.MAX_VALUE ? 
 				generatePrimes(Integer.MAX_VALUE) : generatePrimes((int) num);
 		long result = num;
 		ArrayList<Integer> factors = new ArrayList<>();
+		
 		while (result != 1) {
 			long tmp = result;
+			
 			for (int prime : primes) {
 				if (result % prime == 0) {
 					factors.add(prime);
